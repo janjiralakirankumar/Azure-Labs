@@ -9,8 +9,8 @@
    - Click on "Create a resource" on the left-hand menu.
 
 3. **Search for Ubuntu Server:**
-   - In the search bar, type "Ubuntu Server".
-   - Select `Ubuntu Server 20.04 LTS` from Canonical and click `Create`.
+   - Directly select `Ubuntu Server 20.04 LTS` (Or)
+   - In the search bar, type "Ubuntu Server" Select `Ubuntu Server 20.04 LTS` from Canonical and click `Create`.
 
 4. **Project details**:
 
