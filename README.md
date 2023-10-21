@@ -1,5 +1,5 @@
 ## Lab-01: Step-by-Step Guide for Creating a Virtual Machine and Deploying Nginx on an Azure VM:
-___
+
 ### Creating a Virtual Machine in Azure for Linux:
 
 1. **Sign in to Azure:**
