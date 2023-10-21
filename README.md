@@ -52,12 +52,12 @@
 9. **Connect to Your Linux VM**:
     - After deployment, go to `All Resources` > Click on the VM and choose `Connect`.
     - Choose `Native SSH` and Click on `Select` under Most Common.
-    - In Option 3 click on the Copy Icon and then Open Powershell, change the path where the Private key is available (Ex: Downloads), and Paste it.
+    - In `Option 3` click on the Copy Icon and then Open Powershell, change the path where the Private key is available (Ex: Downloads), and Paste it.
     - **Example:**
    ```
     ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
     ```
-    - Replace your Key Pair Name (Example: Demo-VM-YourName_key.pem) and press Enter.
+    - Replace your Key Pair Name (Example: `Demo-VM-YourName_key.pem`) with `~/.ssh/id_rsa.pem` and press Enter.
     - Now, you are connected to your VM and to check the connection enter the command as `ping google.com` and press enter.
     - By this, you have connected with your Linux VM and tested the Internet connection.
 ---
