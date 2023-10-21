@@ -172,7 +172,7 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
 
      **Note:**
      - The above size is not enough to Use the VM for Installing Nginx.
-     - To Install Nginx Choose `D2s_v3 (2 vCPU, 8 GiB RAM)`
+     - To Install Nginx Choose `D2s_v3 (2 vCPU, 8 GiB RAM)` (It doesn't include in Free Tier and is chargable)
 
 10. **Authentication Type**: (Choose only if it is available or else leave it)
     - Select "Password."
