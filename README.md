@@ -85,7 +85,8 @@ Leave all settings as Default for below.
 
 ### Installing Nginx on a Linux VM (e.g., Ubuntu):
 
-Before Installing Nginx, Lets copy the Public IP and paste it in Browser's new Tab and see.
+Before Installing Nginx, Let's copy the Public IP and paste it into the Browser's new Tab and see.
+As expected it will not Display any Web Page.
 
 1. **Update Package Lists:**
    - It's a good practice to update the package lists to ensure you are installing the latest software. Run the following command:
@@ -125,17 +126,13 @@ Before Installing Nginx, Lets copy the Public IP and paste it in Browser's new T
    This command will display the status and other information about the Nginx service.
 
 6. **Open a Web Browser:**
-   - On your local computer, open a web browser (e.g., Chrome, Firefox, or Edge).
+   -  and  (e.g., Chrome, Firefox, or Edge).
 
 7. **Access the Default Web Page:**
-   - In the web browser's address bar, enter your Linux VM's public IP address. For example, if your VM's public IP address is "12.34.56.78," enter:
+   - Now, again open a web browser's New tab, and enter your Linux VM's public IP address.
+   
+   `**For example:** if your VM's public IP address is "12.34.56.78," enter as `http://12.34.56.78`:`
 
-   ```
-   http://12.34.56.78
-   ```
-
-   You should see the default Nginx welcome page, indicating that Nginx is installed and running on your VM.
+   - You should see the default Nginx welcome page, indicating that Nginx is installed and running on your VM.
 
 Now you've successfully installed Nginx on your Linux VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
-
-Please let me know if you need any additional details or have any questions.
