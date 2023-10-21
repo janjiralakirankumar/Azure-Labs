@@ -169,6 +169,7 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
 
 9. **Size**:
    - Choose a size `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
+
      **Note:**
      - The above size is not enough to Use the VM for Installing Nginx.
      - To Install Nginx Choose `D2s_v3 (2 vCPU, 8 GiB RAM)`
