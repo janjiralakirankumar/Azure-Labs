@@ -169,11 +169,7 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
 
 9. **Size**:
    - Choose a size `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
-
-     **Note:**
-     - The above size is not enough to Use the VM for Installing Nginx.
-     - To Install Nginx Choose `D2s_v3 (2 vCPU, 8 GiB RAM)` (It doesn't include in Free Tier and is chargable)
-
+     
 10. **Authentication Type**: (Choose only if it is available or else leave it)
     - Select "Password."
 
@@ -211,29 +207,36 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
     - Once the VM is deployed, choose the `Connect` option from the left-hand side.
     - Under Most Common > Native RDP click on `Select` and in `Option 3` click on `Download RDP File` to download the RDP file.
     - Use the RDP file to connect to your Windows VM using the provided username and password.
+    - Once connected test the Features and Exit.
+
+22. **Resizing a Windows Server virtual machine (VM) in Microsoft Azure**
+
+To meet your resource requirements and performance. 
+
+1. **Select the Virtual Machine**:
+   - In the Azure portal, navigate to the virtual machine that you want to resize.
+
+2. **Stop the Virtual Machine** (if it's running):
+   - Before you can resize a VM, it needs to be in a stopped (deallocated) state.
+   - If the VM is running, select it, and click the "Stop" button on the top menu. Follow the prompts to confirm the stop action.
+
+3. **Resizing the Virtual Machine**:
+   - With the VM in the stopped state, select the VM again in the Azure portal.
+   - In the left-hand menu, scroll down to the "Settings" section and click on "Size."
+
+4. **Choose a New VM Size**:
+   - You'll see a list of available VM sizes. Choose the size that best fits your requirements. (Each size has information about the number of CPU cores, RAM, and other specifications.)
+   - Click the new size you want to use and click on `Resize` to apply the change
+
+5. **Start the Virtual Machine**:
+   - Once the size change is applied, start the VM by selecting it and clicking the "Start" button.
+
+6. **Connect to the VM**:
+   - After the VM has started with the new size, you may need to connect to it using your preferred method, such as Remote Desktop (RDP) for Windows.
+
+7. **Monitor Performance**:
+    - Keep an eye on the VM's performance to ensure it meets your needs with the new size. You can use Azure Monitor or other monitoring tools to assess the VM's resource utilization.
+
+**Note:** Choose a size that aligns with your specific workload requirements. Additionally, be aware that some VM sizes are only available in certain regions, so ensure the size you want is available in your selected region.
+
 ---
-### (Optional Step) Installing Nginx on a Windows VM:
-
-1. **Access Your Windows VM**:
-   - After connecting to your Windows VM, you can start the installation process.
-
-2. **Download Nginx for Windows**:
-   - Open a web browser on your Windows VM and go to the Nginx download page (https://nginx.org/en/download.html).
-   - Download the latest Windows version of Nginx.
-
-3. **Install Nginx**:
-   - Locate the downloaded Nginx installer and run it.
-   - Follow the installation wizard's instructions, accepting the default settings, and completing the installation.
-
-4. **Start Nginx**:
-   - After installation, start the Nginx service by opening a command prompt with administrator privileges and running the following command:
-
-   ```
-   nginx.exe
-   ```
-
-5. **Check Nginx Status**:
-   - To verify that Nginx is running without any issues, open a web browser on your Windows VM and enter "http://localhost" in the address bar.
-   - You should see the default Nginx welcome page.
-
-Now you've successfully installed Nginx on your Windows VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
