@@ -79,7 +79,7 @@ Leave all settings as Default for below.
    ```bash
    ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
    ```
-   - Replace your Key Pair Name (e.g., `Demo-VM-YourName_key.pem`) in place of `~/.ssh/id_rsa.pem` and press Enter.
+   - Replace your Key Pair Name (e.g., `DemoKeyPair-YourName.pem`) in place of `~/.ssh/id_rsa.pem` and press Enter.
    - Now, you are connected to your VM, and to check the Internet connection, enter the command `ping google.com` and press Enter (`Ctrl+C` to stop).
    - By this, you have connected with your Linux VM and tested the Internet connection.
 
