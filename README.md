@@ -70,7 +70,7 @@ Leave all settings as Default for below.
     - Once Deployed click on `Go to Resources`.
 
 19. **Connect to Your Linux VM**:
-    - After deployment, go to `All Resources` > Click on the VM and choose `Connect`.
+    -choose the `Connect` option from the left-hand side.
     - Choose `Native SSH` and Click on `Select` under Most Common.
     - In `Option 3` click on the Copy Icon and then open PowerShell, change the path where the Private key is available (e.g., Downloads), and paste it.
     - Example:
