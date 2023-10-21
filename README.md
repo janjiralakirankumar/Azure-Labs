@@ -22,7 +22,8 @@
    - Enter a name for your VM (e.g., `Demo-VM-YourName`).
 
 6. **Region**:
-   - Choose a region (e.g., East US) near your location for better performance.
+   - Leave it as Default (e.g., East US) (Or)
+   - Choose a region near your location for better performance.
 
 7. **Availability options**:
    - Keep this as `No infrastructure redundancy required`.
