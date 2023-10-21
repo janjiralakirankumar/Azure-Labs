@@ -1,4 +1,4 @@
-## Lab-01: Step-by-Step Guide for Creating a Virtual Machine and Deploying Nginx on an Azure VM:
+## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
 
 ### Creating a Virtual Machine in Azure for Linux:
 
@@ -19,7 +19,7 @@
      - (To create a new one, click on `Create new` and enter the name as `Demo-RSG-YourName`).
 
 5. **Virtual machine name**:
-   - Enter a name for your VM (e.g., `Demo-VM-YourName`).
+   - Enter a name for your VM (e.g., `Demo-LinuxVM-YourName`).
 
 6. **Region**:
    - Leave it as Default (e.g., East US) (Or)
@@ -136,7 +136,7 @@ As expected it will not Display any Web Page.
 Now you've successfully installed Nginx on your Linux VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
 
 ---
-## Step-by-step guide for creating a virtual machine and deploying Nginx on an Azure VM running Windows Server:
+## Lab-02: Step-by-step guide for creating a Windows virtual machine and deploying Nginx using Azure:
 
 ### Creating a Virtual Machine in Azure for Windows Server:
 
@@ -147,33 +147,37 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
    - Click on "Create a resource" on the left-hand menu.
 
 3. **Search for Windows Server:**
-   - In the search bar, type "Windows Server." Select an appropriate Windows Server version (e.g., Windows Server 2019) and click `Create`.
+   - In the search bar, type "Windows Server." Select an appropriate Windows Server version (e.g., Windows Server 2022 Datacenter - x64 Gen 2) and click `Create`.
 
 4. **Project Details**:
 
    - **Subscription**: Choose your Azure subscription.
-   - **Resource Group**: Create a new `resource group` or use an existing one (e.g., "Demo-RSG-YourName").
+   - **Resource Group**: Create a new `resource group`(e.g., `Demo-RSG-YourName`) or use an existing one.
 
 5. **Virtual Machine Name**:
-   - Enter a name for your VM (e.g., "Demo-VM-YourName").
+   - Enter a name for your VM (e.g., `Demo-WindowsVM-YourName`).
 
 6. **Region**:
-   - Choose a region that is geographically close to you for better performance.
+   - Leave it as Default (e.g., East US) (Or)
+   - Choose a region near your location for better performance.
 
 7. **Availability Options**:
    - Keep this as `No infrastructure redundancy required`.
 
 8. **Image**:
-   - Select the Windows Server version you chose earlier.
+   - Ensure that `Windows Server 2022 Datacenter - x64 Gen 2` is already selected (Or) Select it.
 
 9. **Size**:
-   - Choose an appropriate size based on your needs. Be aware of cost considerations.
+   - Choose a size `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
+     **Note:**
+     - The above size is not enough to Use the VM for Installing Nginx.
+     - To Install Nginx Choose `D2s_v3 (2 vCPU, 8 GiB RAM)`
 
-10. **Authentication Type**:
+10. **Authentication Type**: (Choose only if it is available or else leave it)
     - Select "Password."
 
 11. **Username and Password**:
-    - Enter a username and password for your Windows VM. Make sure it's strong and secure.
+    - Enter a `username` and `password` for your Windows VM. Make sure it's strong and secure.
 
 12. **Inbound Port Rules**:
     - In `Select inbound ports`, choose "RDP (3389)" and "HTTP (80)".
@@ -181,33 +185,33 @@ Now you've successfully installed Nginx on your Linux VM and accessed the defaul
 13. Click on `Next: Disks`.
 
 14. **Disks**:
-    - **OS Disk Size (GiB)**: Use the default size.
+    - **OS Disk Size (GiB)**: Use the default size as 127 GiB.
     - **OS Disk Type**: Choose "Standard SSD" for better performance.
 
 15. Click on `Next: Networking`.
 
-16. **Networking**:
-    - Leave all settings as default.
+16. **Networking**: Leave all settings as default.
+    
     - Create a new virtual network and subnet if necessary.
     - Create a new public IP address or use an existing one.
     - Keep the network security group as "Basic."
     - Select "RDP (3389)" and "HTTP (80)" for public inbound ports.
 
-17. Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review + Create`.
+18. Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review + Create`.
 
-18. **Review + Create**:
+19. **Review + Create**:
     - Review the settings to ensure they align with your requirements.
     - Click `Create` to start the VM provisioning process.
 
-19. **Deployment Process**:
+20. **Deployment Process**:
     - Azure will start deploying your Windows VM. Monitor the progress in the Azure portal.
 
-20. **Connect to Your Windows VM**:
+21. **Connect to Your Windows VM**:
     - Once the VM is deployed, choose the `Connect` option from the left-hand side.
-    - Under "RDP," click on `Download RDP File` to download the RDP file.
+    - Under Most Common > Native RDP click on `Select` and in `Option 3` click on `Download RDP File` to download the RDP file.
     - Use the RDP file to connect to your Windows VM using the provided username and password.
-
-### Installing Nginx on a Windows VM:
+---
+### (Optional Step) Installing Nginx on a Windows VM:
 
 1. **Access Your Windows VM**:
    - After connecting to your Windows VM, you can start the installation process.
