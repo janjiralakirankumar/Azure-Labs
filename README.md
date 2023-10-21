@@ -38,7 +38,8 @@
     - Select "SSH public key".
   
 11. **SSH public key source**:
-    - Choose `Generate new key pair` or use an existing one.
+    - Choose `Generate new key pair` and Enter the name as `DemoKeyPair-YourName`(Or)
+    - Use an existing one.
 
 12. Click on `Next: Disks`.
 
