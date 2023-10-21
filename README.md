@@ -85,6 +85,8 @@ Leave all settings as Default for below.
 
 ### Installing Nginx on a Linux VM (e.g., Ubuntu):
 
+Before Installing Nginx, Lets copy the Public IP and paste it in Browser's new Tab and see.
+
 1. **Update Package Lists:**
    - It's a good practice to update the package lists to ensure you are installing the latest software. Run the following command:
 
