@@ -125,10 +125,8 @@ As expected it will not Display any Web Page.
 
    This command will display the status and other information about the Nginx service.
 
-6. **Open a Web Browser:**
-   -  and  (e.g., Chrome, Firefox, or Edge).
+6. **Open a Web Browser and Access the Default Web Page::**
 
-7. **Access the Default Web Page:**
    - Now, again open a web browser's New tab, and enter your Linux VM's public IP address.
    
    ##### `For example: if your VM's public IP address is "12.34.56.78," enter as http://12.34.56.78:`
