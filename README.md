@@ -58,7 +58,7 @@
     ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
     ```
     - Replace your Key Pair Name (Example: `Demo-VM-YourName_key.pem`) with `~/.ssh/id_rsa.pem` and press Enter.
-    - Now, you are connected to your VM and to check the connection enter the command as `ping google.com` and press enter.
+    - Now, you are connected to your VM and to check the Internet connection enter the command `ping google.com` and press enter.
     - By this, you have connected with your Linux VM and tested the Internet connection.
 ---
 **Creating a Virtual Machine in Azure for Windows (Detailed Steps for Students):**
