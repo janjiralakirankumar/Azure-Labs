@@ -131,7 +131,7 @@ As expected it will not Display any Web Page.
 7. **Access the Default Web Page:**
    - Now, again open a web browser's New tab, and enter your Linux VM's public IP address.
    
-   `**For example:** if your VM's public IP address is "12.34.56.78," enter as http://12.34.56.78:`
+   ##### `For example: if your VM's public IP address is "12.34.56.78," enter as http://12.34.56.78:`
 
    - You should see the default Nginx welcome page, indicating that Nginx is installed and running on your VM.
 
