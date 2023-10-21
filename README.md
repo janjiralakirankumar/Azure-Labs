@@ -1,4 +1,4 @@
-## Detailed and step-by-step guide for creating a virtual machine and installing Nginx on the VM in Azure:
+## Step-by-Step Guide for Creating a Virtual Machine and Deploying Nginx on an Azure VM:
 
 ### Creating a Virtual Machine in Azure for Linux:
 
