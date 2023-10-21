@@ -134,3 +134,101 @@ As expected it will not Display any Web Page.
    - You should see the default Nginx welcome page, indicating that Nginx is installed and running on your VM.
 
 Now you've successfully installed Nginx on your Linux VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
+
+---
+## Step-by-step guide for creating a virtual machine and deploying Nginx on an Azure VM running Windows Server:
+
+### Creating a Virtual Machine in Azure for Windows Server:
+
+1. **Sign in to Azure:**
+   - Sign in to the Azure portal (https://portal.azure.com) using your Azure account.
+
+2. **Create a Resource:**
+   - Click on "Create a resource" on the left-hand menu.
+
+3. **Search for Windows Server:**
+   - In the search bar, type "Windows Server." Select an appropriate Windows Server version (e.g., Windows Server 2019) and click `Create`.
+
+4. **Project Details**:
+
+   - **Subscription**: Choose your Azure subscription.
+   - **Resource Group**: Create a new `resource group` or use an existing one (e.g., "Demo-RSG-YourName").
+
+5. **Virtual Machine Name**:
+   - Enter a name for your VM (e.g., "Demo-VM-YourName").
+
+6. **Region**:
+   - Choose a region that is geographically close to you for better performance.
+
+7. **Availability Options**:
+   - Keep this as `No infrastructure redundancy required`.
+
+8. **Image**:
+   - Select the Windows Server version you chose earlier.
+
+9. **Size**:
+   - Choose an appropriate size based on your needs. Be aware of cost considerations.
+
+10. **Authentication Type**:
+    - Select "Password."
+
+11. **Username and Password**:
+    - Enter a username and password for your Windows VM. Make sure it's strong and secure.
+
+12. **Inbound Port Rules**:
+    - In `Select inbound ports`, choose "RDP (3389)" and "HTTP (80)".
+
+13. Click on `Next: Disks`.
+
+14. **Disks**:
+    - **OS Disk Size (GiB)**: Use the default size.
+    - **OS Disk Type**: Choose "Standard SSD" for better performance.
+
+15. Click on `Next: Networking`.
+
+16. **Networking**:
+    - Leave all settings as default.
+    - Create a new virtual network and subnet if necessary.
+    - Create a new public IP address or use an existing one.
+    - Keep the network security group as "Basic."
+    - Select "RDP (3389)" and "HTTP (80)" for public inbound ports.
+
+17. Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review + Create`.
+
+18. **Review + Create**:
+    - Review the settings to ensure they align with your requirements.
+    - Click `Create` to start the VM provisioning process.
+
+19. **Deployment Process**:
+    - Azure will start deploying your Windows VM. Monitor the progress in the Azure portal.
+
+20. **Connect to Your Windows VM**:
+    - Once the VM is deployed, choose the `Connect` option from the left-hand side.
+    - Under "RDP," click on `Download RDP File` to download the RDP file.
+    - Use the RDP file to connect to your Windows VM using the provided username and password.
+
+### Installing Nginx on a Windows VM:
+
+1. **Access Your Windows VM**:
+   - After connecting to your Windows VM, you can start the installation process.
+
+2. **Download Nginx for Windows**:
+   - Open a web browser on your Windows VM and go to the Nginx download page (https://nginx.org/en/download.html).
+   - Download the latest Windows version of Nginx.
+
+3. **Install Nginx**:
+   - Locate the downloaded Nginx installer and run it.
+   - Follow the installation wizard's instructions, accepting the default settings, and completing the installation.
+
+4. **Start Nginx**:
+   - After installation, start the Nginx service by opening a command prompt with administrator privileges and running the following command:
+
+   ```
+   nginx.exe
+   ```
+
+5. **Check Nginx Status**:
+   - To verify that Nginx is running without any issues, open a web browser on your Windows VM and enter "http://localhost" in the address bar.
+   - You should see the default Nginx welcome page.
+
+Now you've successfully installed Nginx on your Windows VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
