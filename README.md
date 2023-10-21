@@ -1,10 +1,6 @@
 ## Detailed and step-by-step guide for creating a virtual machine in Azure, both for Linux and Windows.
 
-**Creating a Virtual Machine in Azure for Linux (Detailed Steps for Students):**
-
-Certainly, I'll provide a detailed step-by-step guide for students to create a virtual machine in Azure, including the input fields following best practices that consider the free tier for resources where applicable. This guide will focus on creating a virtual machine for a Linux-based environment.
-
-**Creating a Virtual Machine in Azure for Linux (Free Tier and Best Practices):**
+### Creating a Virtual Machine in Azure for Linux:
 
 1. **Sign in to Azure:**
    - Sign in to the Azure portal (https://portal.azure.com) using your Azure account.
@@ -13,56 +9,57 @@ Certainly, I'll provide a detailed step-by-step guide for students to create a v
    - Click on "Create a resource" on the left-hand menu.
 
 3. **Search for Ubuntu Server:**
-   - In the search bar, type "Ubuntu Server."
-   - Select "Ubuntu Server" from Canonical and click "Create."
+   - In the search bar, type "Ubuntu Server"
+   - Select `Ubuntu Server 20.04 LTS` from Canonical and click `Create.`
 
-4. **Basics**:
+4. **Project details**:
 
    - **Subscription**: Choose your Azure subscription (ensure it's a subscription that supports the free tier if available).
-   - **Resource group**: Create a new resource group or use an existing one (keep resource group names unique).
-   - **Virtual machine name**: Enter a unique name for your VM.
+   - **Resource group**: Create a new `resource group` or use an existing one (keep resource group names unique).
+
+     (To create click on `Create new` and enter the name as `Demo-RSG-YourName`)
+   - **Virtual machine name**: Enter Name as `Demo-VM-YourName`
    - **Region**: Choose a region (e.g., East US) near your location for better performance.
-   - **Availability options**: Keep this as "No infrastructure redundancy required."
-   - **Image**: Select "Ubuntu Server 20.04 LTS."
-   - **Size**: Choose a size that fits within the free tier limits, such as "B1s" (1 vCPU, 1 GB RAM).
+   - **Availability options**: Keep this as `No infrastructure redundancy required.`
+   - **Image**: Select "Ubuntu Server 20.04 LTS." (Leave it if already selected)
+   - **Size**: Choose a size `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
    - **Authentication type**: Select "SSH public key."
-   - **SSH public key**: Paste your public SSH key for secure access.
+   - **SSH public key source**: `Generate new key pair` or choose the existing one.
+   - Click on `Next: Disks>`
 
 5. **Disks**:
+   - **OS disk Size (GiB)**: Use the default size, which is often 30 GiB.
    - **OS disk type**: Choose "Standard SSD" for better performance (the free tier doesn't have specific disk limitations).
-   - **Size (GiB)**: Use the default size, which is often 30 GB.
+   - Click on `Next: Networking>`
 
-6. **Networking**:
+6. **Networking**: Leave all settings as Default.
    - **Virtual network**: Create a new virtual network or use an existing one.
    - **Subnet**: Create a new subnet or use an existing one (e.g., "default").
    - **Public IP**: Create a new public IP address.
    - **NIC network security group**: Choose "Basic."
    - **Public inbound ports**: Select "SSH (22)."
+   - Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review+Create`
 
-7. **Management**:
-   - **Boot diagnostics**: Enable this for troubleshooting.
-   - **OS guest diagnostics**: Leave this as "On."
-   - **Enable auto-shutdown**: Configure an auto-shutdown time to save costs (e.g., daily at 6:00 PM).
-
-8. **Advanced**:
-   - This section is optional, and you can skip it.
-
-9. **Tags**:
-   - Add tags to categorize your resources if desired (e.g., Name: MyLinuxVM).
-
-10. **Review + Create**:
+7. **Review + Create**:
     - Review the settings to ensure they align with best practices and free tier limits.
-    - Click "Create" to initiate the VM provisioning process.
+    - Click `Create` to initiate the VM provisioning process.
+    - Click on `Download private key and create resource` to download the New Key Pair.
 
-11. **Deployment**:
+8. **Deployment Process**:
     - Azure will start deploying your Linux VM. Monitor the progress in the Azure portal.
+    - Once Deployed click on `Go to Resources`
 
-12. **Connect to Your Linux VM**:
-    - After deployment, go to the VM's details in the Azure portal.
-    - Find the public IP address to connect to your Linux VM using SSH. 
-
-By following these detailed steps, students can create a Linux-based virtual machine in Azure while adhering to best practices and, where applicable, taking advantage of the free tier resources. This exercise will provide students with practical experience in deploying resources on Azure.
-
+9. **Connect to Your Linux VM**:
+    - After deployment, go to `All Resources` > Click on the VM and choose `Connect`.
+    - Choose `Native SSH` and Click on `Select` under Most Common.
+    - In Option 3 click on the Copy Icon and then Open Powershell, change the path where the Private key is available (Ex: Downloads), and Paste it.
+    - **Example:**
+   ```
+    ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
+    ```
+    - Replace your Key Pair Name (Example: Demo-VM-YourName_key.pem) and press Enter.
+    - Now, you are connected to your VM and to check the connection enter the command as `ping google.com` and press enter.
+    - By this, you have connected with your Linux VM and tested the Internet connection.
 ---
 **Creating a Virtual Machine in Azure for Windows (Detailed Steps for Students):**
 
