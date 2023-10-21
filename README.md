@@ -37,7 +37,7 @@
    - **Subnet**: Create a new subnet or use an existing one (e.g., "default").
    - **Public IP**: Create a new public IP address.
    - **NIC network security group**: Choose "Basic."
-   - **Public inbound ports**: Select "SSH (22)."
+   - **Public inbound ports**: Select "SSH (22) and HTTP (80)."
    - Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review+Create`
 
 7. **Review + Create**:
