@@ -52,6 +52,7 @@
 15. **Networking**:
 
 #### Leave all settings as Default for below.
+
     - **Virtual network**: Create a new virtual network or use an existing one.
     - **Subnet**: Create a new subnet or use an existing one (e.g., "default").
     - **Public IP**: Create a new public IP address.
