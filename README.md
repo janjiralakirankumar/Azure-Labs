@@ -1,4 +1,4 @@
-Certainly, I'll provide a detailed step-by-step guide for students on what to select and enter as input for each field when creating a virtual machine in Azure, both for Linux and Windows.
+## Detailed and step-by-step guide for creating a virtual machine in Azure, both for Linux and Windows.
 
 **Creating a Virtual Machine in Azure for Linux (Detailed Steps for Students):**
 
