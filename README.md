@@ -58,8 +58,66 @@
     ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
     ```
     - Replace your Key Pair Name (Example: `Demo-VM-YourName_key.pem`) with `~/.ssh/id_rsa.pem` and press Enter.
-    - Now, you are connected to your VM and to check the Internet connection enter the command `ping google.com` and press enter.
+    - Now, you are connected to your VM and to check the Internet connection enter the command `ping google.com` and press enter. (`Ctrl+C` to stop).
     - By this, you have connected with your Linux VM and tested the Internet connection.
+
+10. **Installing Nginx on a Linux VM (e.g., Ubuntu):**
+
+1. install Nginx on a Linux VM in Azure and check the default web page:
+
+**Note:** Make sure you are connected to your Linux VM using SSH as described in the previous response.
+
+2. **Update Package Lists:**
+   - It's a good practice to update the package lists to ensure you are installing the latest software. Run the following command:
+
+   ```bash
+   sudo apt update
+   ```
+
+3. **Install Nginx:**
+   - Use the package manager to install Nginx. Run the following command:
+
+   ```bash
+   sudo apt install nginx
+   ```
+
+4. **Start Nginx:**
+   - After the installation is complete, start Nginx with the following command:
+
+   ```bash
+   sudo systemctl start nginx
+   ```
+
+5. **Enable Nginx to Start on Boot:**
+   - To ensure Nginx starts automatically when the VM reboots, use the following command:
+
+   ```bash
+   sudo systemctl enable nginx
+   ```
+
+6. **Check the Status of Nginx:**
+   - Verify that Nginx is running without any issues. Run the following command:
+
+   ```bash
+   sudo systemctl status nginx
+   ```
+
+   This command will display the status and other information about the Nginx service.
+
+7. **Open a Web Browser:**
+   - On your local computer, open a web browser (e.g., Chrome, Firefox, or Edge).
+
+8. **Access the Default Web Page:**
+   - In the web browser's address bar, enter your Linux VM's public IP address. For example, if your VM's public IP address is "12.34.56.78," enter:
+
+   ```
+   http://12.34.56.78
+   ```
+
+   You should see the default Nginx welcome page, indicating that Nginx is installed and running on your VM.
+
+Now you've successfully installed Nginx on your Linux VM and accessed the default web page. You can further configure Nginx to host your own web content or web applications as needed.
+
 ---
 **Creating a Virtual Machine in Azure for Windows (Detailed Steps for Students):**
 
