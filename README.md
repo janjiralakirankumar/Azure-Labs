@@ -2,165 +2,166 @@
 
 ### Creating a Virtual Machine in Azure for Linux:
 
-1. **Sign in to Azure:**
-   - Sign in to the Azure portal (https://portal.azure.com) using your Azure account.
+1. **Azure Sign-in:**
+   - Start by signing in to the Azure portal using your Azure account. Visit [https://portal.azure.com](https://portal.azure.com) to access the portal.
 
-2. **Create a Resource:**
-   - Click on "Create a resource" on the left-hand menu.
+2. **Resource Creation:**
+   - Click on "Create a resource" on the left-hand menu to initiate the virtual machine creation process.
 
 3. **Search for Ubuntu Server:**
-   - Directly select `Ubuntu Server 20.04 LTS` or, in the search bar, type "Ubuntu Server." Select `Ubuntu Server 20.04 LTS` from Canonical and click `Create`.
+   - Directly select `Ubuntu Server 20.04 LTS`, or use the search bar to look for "Ubuntu Server." Choose `Ubuntu Server 20.04 LTS` from Canonical and click `Create`.
 
 4. **Project Details**:
-   - **Subscription**: Choose your Azure subscription (ensure it's a subscription that supports the free tier if available).
-   - **Resource group**: Create a new `resource group` or use an existing one (ensure resource group names are unique). To create a new one, click on `Create new` and enter the name as `Demo-RSG-YourName`.
+   - Configure the following:
+     - **Subscription**: Choose your Azure subscription (ensuring it supports the free tier if applicable).
+     - **Resource group**: Create a new `resource group` or select an existing one (with a unique name). For a new group, click "Create new" and name it, e.g., `Demo-RSG-YourName`.
 
-5. **Virtual machine name**:
-   - Enter a name for your VM (e.g., `Demo-LinuxVM-YourName`).
+5. **Virtual Machine Name**:
+   - Specify a name for your VM, e.g., `Demo-LinuxVM-YourName`.
 
 6. **Region**:
-   - Leave it as the default (e.g., East US) or choose a region near your location for better performance.
+   - Leave it as the default (e.g., East US) or choose a region near your location for optimal performance.
 
 7. **Availability options**:
-   - Keep this as `No infrastructure redundancy required`.
+   - Keep this setting as `No infrastructure redundancy required`.
 
 8. **Image**:
-   - Select "Ubuntu Server 20.04 LTS" (leave it if already selected).
+   - Ensure "Ubuntu Server 20.04 LTS" is selected (it might be pre-selected).
 
 9. **Size**:
-   - Choose a size: `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
+   - Choose a size: `"B1s" (1 vCPU, 1 GB RAM)" to stay within the free tier limits.
 
 10. **Authentication type**:
-    - Select "SSH public key".
+    - Select "SSH public key."
 
 11. **SSH public key source**:
-    - Choose `Generate a new key pair` and name it as `DemoKeyPair-YourName`, or use an existing one.
-    - **Inbound port rules:** In `Select inbound ports`, choose `SSH (22)` and `HTTP (80)`.
+    - Choose `Generate a new key pair` and name it, e.g., `DemoKeyPair-YourName`, or use an existing one.
+    - In the `Select inbound ports` section, choose `SSH (22)` and `HTTP (80)`.
 
-12. Click on `Next: Disks`.
+12. Click "Next: Disks."
 
 13. **Disks**:
-    - **OS disk size (GiB)**: Use the default size, typically 30 GiB.
-    - **OS disk type**: Choose "Standard SSD" for improved performance.
+    - Use the default OS disk size (usually 30 GiB).
+    - For the OS disk type, select "Standard SSD" for improved performance.
 
-14. Click on `Next: Networking`.
+14. Click "Next: Networking."
 
 15. **Networking**:
-    - Leave all settings as default for the following:
+    - Keep the default settings for the following:
     - **Virtual network**: Create a new virtual network or use an existing one.
     - **Subnet**: Create a new subnet or use an existing one (e.g., "default").
     - **Public IP**: Create a new public IP address.
-    - **NIC network security group**: Choose "Basic".
-    - **Public inbound ports**: Select "SSH (22) and HTTP (80)".
+    - For the NIC network security group, choose "Basic."
+    - Select "SSH (22) and HTTP (80)" for public inbound ports.
 
-16. Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review + Create`.
+16. Click "Next: Management" > "Monitoring" > "Advanced" > "Tags" > "Review + Create."
 
 17. **Review + Create**:
-    - Review the settings to ensure they align with best practices and free tier limits.
-    - Click `Create` to initiate the VM provisioning process.
-    - Click on `Download private key and create resource` to download the new key pair.
+    - Review the settings to ensure they comply with best practices and free tier limits.
+    - Click "Create" to start provisioning the VM.
+    - Download the new key pair by clicking "Download private key and create resource."
 
 18. **Deployment Process**:
-    - Azure will begin deploying your Linux VM. Monitor the progress in the Azure portal.
-    - Once deployed, click on `Go to Resources`.
+    - Monitor the deployment progress in the Azure portal. Once the VM is deployed, click "Go to Resources."
 
 19. **Connect to Your Linux VM**:
-    - Choose the `Connect` option from the left-hand side.
-    - Under "Most Common," select `Native SSH` and click on `Select`.
-    - In "Option 3," click on the Copy Icon to copy the Connect Command.
-    - Open PowerShell, navigate to the directory where the private key is located (e.g., Downloads), and paste the command.
+    - Choose the `Connect` option from the left-hand menu.
+    - Under "Most Common," select `Native SSH` and click "Select."
+    - In "Option 3," click the copy icon to copy the Connect Command.
+    - Open PowerShell, navigate to the directory with the private key (e.g., Downloads), and paste the command.
     - Example:
    ```bash
    ssh -i ~/.ssh/id_rsa.pem azureuser@172.190.132.28
    ```
-   - Replace your Key Pair Name (e.g., `DemoKeyPair-YourName.pem`) in place of `~/.ssh/id_rsa.pem` and press Enter.
-   - You are now connected to your VM. To check the Internet connection, enter the command `ping google.com` and press Enter (`Ctrl+C` to stop).
-   - This confirms your connection to the Linux VM and tests the Internet connection.
+   - Replace `~/.ssh/id_rsa.pem` with your Key Pair Name (e.g., `DemoKeyPair-YourName.pem`) and press Enter.
+   - This establishes a connection to your VM. To verify the Internet connection, use the command `ping google.com` (stop with `Ctrl+C`).
+
+20. This confirms your connection to the Linux VM and checks the Internet connection.
 
 ### Installing Nginx on a Linux VM (e.g., Ubuntu):
 
 Before Installing Nginx, Copy the Public IP and paste it into a new tab in your browser to see that it does not display a web page.
 
 1. **Update Package Lists**:
-   - As a best practice, update the package lists to ensure you install the latest software. Run the following command:
+   - As a best practice, update package lists to ensure you install the latest software. Run this command:
 
    ```bash
    sudo apt update
    ```
 
 2. **Install Nginx**:
-   - Use the package manager to install Nginx. Run the following command:
+   - Use the package manager to install Nginx. Execute this command:
 
    ```bash
    sudo apt install nginx
    ```
 
 3. **Start Nginx**:
-   - After the installation is complete, start Nginx with the following command:
+   - After the installation, start Nginx with this command:
 
    ```bash
    sudo systemctl start nginx
    ```
 
 4. **Enable Nginx to Start on Boot**:
-   - Ensure Nginx starts automatically when the VM reboots by using the following command:
+   - Ensure Nginx starts automatically when the VM reboots using this command:
 
    ```bash
    sudo systemctl enable nginx
    ```
 
 5. **Check the Status of Nginx**:
-   - Verify that Nginx is running without any issues. Run the following command:
+   - Verify that Nginx is running smoothly. Use this command:
 
    ```bash
    sudo systemctl status nginx
    ```
 
-   This command will display the status and other information about the Nginx service.
+   This command displays the status and other information about the Nginx service.
 
 6. **Open a Web Browser and Access the Default Web Page**:
-   - Open a new tab in your web browser and enter your Linux VM's public IP address.
-   - For example, if your VM's public IP address is "12.34.56.78," enter it as http://12.34.56.78.
-   - You should see the default Nginx welcome page, confirming that Nginx is installed and running on your VM.
+   - Open a new browser tab and enter your Linux VM's public IP address.
+   - For instance, if the VM's public IP address is "12.34.56.78," enter it as http://12.34.56.78.
+   - You should see the default Nginx welcome page, confirming Nginx installation and operation on your VM.
 
-You have now successfully installed Nginx on your Linux VM and accessed the default web page. You can further configure Nginx to host your web content or web applications as needed.
+You have now successfully installed Nginx on your Linux VM and accessed the default web page. Further configuration can be done to host web content or applications as needed.
 
 ---
 
-## Lab-02: Step-by-step guide for creating a Windows virtual machine and deploying Nginx using Azure:
+## Lab-02: Step-by-Step Guide for Creating a Windows Virtual Machine and Deploying Nginx Using Azure:
 
 ### Creating a Virtual Machine in Azure for Windows Server:
 
-1. **Sign in to Azure**:
-   - Sign in to the Azure portal (https://portal.azure.com) using your Azure account.
+1. **Azure Sign-in:**
+   - Begin by signing in to the Azure portal using your Azure account. Access the portal at [https://portal.azure.com](https://portal.azure.com).
 
-2. **Create a Resource**:
-   - Click on "Create a resource" in the left-hand menu.
+2. **Resource Creation:**
+   - Click on "Create a resource" in the left-hand menu to initiate the virtual machine creation process.
 
-3. **Search for Windows Server**:
+3. **Search for Windows Server:**
    - In the search bar, type "Windows Server." Select an appropriate Windows Server version (e.g., Windows Server 2022 Datacenter - x64 Gen 2) and click `Create`.
 
 4. **Project Details**:
-
-   - **Subscription**: Choose your Azure subscription.
-   - **Resource Group**: Create a new `resource group` (e.g., `Demo-RSG-YourName`) or use an existing one.
+   - Configure the following:
+     - **Subscription**: Choose your Azure subscription.
+     - **Resource Group**: Create a new `resource group` (e.g., `Demo-RSG-YourName`) or use an existing one.
 
 5. **Virtual Machine Name**:
-   - Enter a name for your VM (e.g
+   - Specify a name for your VM, e.g., `
 
-., `Demo-WindowsVM-YourName`).
+Demo-WindowsVM-YourName`.
 
 6. **Region**:
-   - Leave it as the default (e.g., East US) or choose a region near your location for better performance.
+   - Leave it as the default (e.g., East US) or choose a region near your location for optimal performance.
 
 7. **Availability Options**:
-   - Keep this as `No infrastructure redundancy required`.
+   - Keep this setting as `No infrastructure redundancy required`.
 
 8. **Image**:
-   - Ensure that `Windows Server 2022 Datacenter - x64 Gen 2` is already selected or select it.
+   - Ensure "Windows Server 2022 Datacenter - x64 Gen 2" is selected, or select it.
 
 9. **Size**:
-   - Choose a size: `"B1s" (1 vCPU, 1 GB RAM)` that fits within the free tier limits.
+   - Choose a size: `"B1s" (1 vCPU, 1 GB RAM)" to stay within the free tier limits.
 
 10. **Authentication Type** (Choose only if available or leave it):
     - Select "Password."
@@ -171,34 +172,34 @@ You have now successfully installed Nginx on your Linux VM and accessed the defa
 12. **Inbound Port Rules**:
     - In `Select inbound ports`, choose "RDP (3389)" and "HTTP (80)."
 
-13. Click on `Next: Disks`.
+13. Click "Next: Disks."
 
 14. **Disks**:
-    - **OS Disk Size (GiB)**: Use the default size, typically 127 GiB.
-    - **OS Disk Type**: Choose "Standard SSD" for better performance.
+    - Use the default OS disk size (usually 127 GiB).
+    - For the OS disk type, select "Standard SSD" for better performance.
 
-15. Click on `Next: Networking`.
+15. Click "Next: Networking."
 
 16. **Networking**:
-    - Leave all settings as default:
+    - Keep the default settings:
     - Create a new virtual network and subnet if necessary.
     - Create a new public IP address or use an existing one.
     - Keep the network security group as "Basic."
     - Select "RDP (3389)" and "HTTP (80)" for public inbound ports.
 
-18. Click on `Next: Management` > `Monitoring` > `Advanced` > `Tags` > `Review + Create`.
+18. Click "Next: Management" > "Monitoring" > "Advanced" > "Tags" > "Review + Create."
 
 19. **Review + Create**:
-    - Review the settings to ensure they align with your requirements.
-    - Click `Create` to start the VM provisioning process.
+    - Review the settings to ensure they comply with your requirements.
+    - Click "Create" to start the VM provisioning process.
 
 20. **Deployment Process**:
     - Azure will start deploying your Windows VM. Monitor the progress in the Azure portal.
 
 21. **Connect to Your Windows VM**:
-    - Once the VM is deployed, choose the `Connect` option from the left-hand side.
-    - Under "Most Common," select `Native RDP` and click on `Select`.
-    - In "Option 3," click on `Download RDP File` to download the RDP file.
+    - Once the VM is deployed, choose the `Connect` option from the left-hand menu.
+    - Under "Most Common," select `Native RDP` and click "Select."
+    - In "Option 3," click "Download RDP File" to download the RDP file.
     - Use the RDP file to connect to your Windows VM using the provided username and password.
     - Test the features and exit.
 
@@ -219,7 +220,7 @@ To meet your resource requirements and performance:
 
 4. **Choose a New VM Size**:
    - You'll see a list of available VM sizes. Choose the size that best fits your requirements. Each size has information about the number of CPU cores, RAM, and other specifications.
-   - Click the new size you want to use and click on `Resize` to apply the change.
+   - Click the new size you want to use and click "Resize" to apply the change.
 
 5. **Start the Virtual Machine**:
    - Once the size change is applied, start the VM by selecting it and clicking the "Start" button.
