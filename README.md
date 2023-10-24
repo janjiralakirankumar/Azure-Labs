@@ -234,7 +234,7 @@ To meet your resource requirements and performance:
 **Note**: Choose a size that aligns with your specific workload requirements. Additionally, be aware that some VM sizes are only available in certain regions, so ensure the size you want is available in your selected region.
 
 ---
-Certainly, I'll provide more detailed steps with explanations to make it accessible for beginners to create an Azure Blob Storage lab:
+## Lab 03: Detailed Steps for Creating an Azure Blob Storage:
 
 **Step 1: Create an Azure Storage Account**
 
@@ -264,7 +264,7 @@ Certainly, I'll provide more detailed steps with explanations to make it accessi
 
    - **Networking:** For lab purposes, select "Public endpoint (all networks)."
 
-6. Click "Review + create" to review your settings and ensure they are correct.
+6. Click "Review + Create" to review your settings and ensure they are correct.
 
 7. After reviewing, click "Create" to start the provisioning process. It might take a few minutes for your storage account to be created.
 
@@ -290,7 +290,7 @@ Certainly, I'll provide more detailed steps with explanations to make it accessi
 
 2. To upload a blob, click the "Upload" button.
 
-3. Choose a file from your local computer to upload to the container. For example, you can select an image file or a text document.
+3. Choose a file from your local computer to upload to the container. (For example, you can select an image file or a text document.)
 
 4. While uploading blobs, consider giving them meaningful names and organizing them into virtual directories within the container.
 
@@ -338,3 +338,5 @@ Certainly, I'll provide more detailed steps with explanations to make it accessi
 2. Delete the storage account, containers, and blobs you created during the lab. You can do this by going to the respective resource and clicking the "Delete" option.
 
 By following these detailed steps with explanations, beginners can create an Azure Blob Storage lab, learning the fundamentals of Azure Blob Storage and its best practices for security and efficiency.
+
+---
