@@ -29,6 +29,42 @@ Creating an Azure account involves the following steps:
 13. **Start Using Azure:** Your account is created, and you can start using Azure services. Be aware of potential usage costs.
 
 ---
+# Exercise―explore the Learn sandbox.
+
+To explore the Learn sandbox, follow these steps:
+
+1. **Visit the Azure Learn Sandbox Page:**
+   Go to the Azure Learn Sandbox page, which can be found at [https://docs.microsoft.com/en-us/learn/certifications/devops-engineer](https://docs.microsoft.com/en-us/learn/certifications/devops-engineer).
+
+2. **Sign In or Create a Microsoft Account:**
+   You may be required to sign in with your Microsoft account. If you don't have one, you can create a new Microsoft account.
+
+3. **Access the Sandbox:**
+   Once you're signed in, you should see an option to access the Azure sandbox. Click on it.
+
+4. **Start a Sandbox Session:**
+   You will typically be given a time-limited session in the sandbox environment, often a few hours. During this time, you can explore Azure services, create and manage resources, and follow guided tutorials.
+
+5. **Explore Azure Services:**
+   Inside the Azure sandbox, you can access various Azure services, like virtual machines, databases, web apps, and more. You can create resources, configure settings, and learn by doing.
+
+6. **Complete Learning Modules:**
+   The Azure Learn platform often provides guided learning modules and tutorials. You can complete these modules to gain hands-on experience with Azure services. Follow the instructions step-by-step.
+
+7. **Experiment and Learn:**
+   Since this is a sandbox environment, you don't need to worry about costs or resource cleanup. Feel free to experiment, make mistakes, and learn from them. This is a safe place to gain practical experience.
+
+8. **Monitor Your Time:** Keep track of the time you have in the sandbox. Once your session expires, you'll no longer have access to the sandbox environment.
+
+9. **Save Your Progress:**
+   Some learning modules might allow you to save your progress, which can be helpful for returning to your work in the future.
+
+10. **Additional Resources:**
+    The Azure Learn platform often provides additional resources such as documentation, videos, and quizzes to enhance your learning.
+---
+
+# Walkthrough―explore the Azure global infrastructure.
+
 # AZ-900 Labs
 
 ## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
