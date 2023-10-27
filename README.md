@@ -29,7 +29,7 @@ Creating an Azure account involves the following steps:
 13. **Start Using Azure:** Your account is created, and you can start using Azure services. Be aware of potential usage costs.
 
 ---
-# Azure Labs
+# AZ-900 Labs
 
 ## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
 
