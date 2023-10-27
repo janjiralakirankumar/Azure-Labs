@@ -1,3 +1,38 @@
+## Walkthrough―create an Azure account.
+
+Creating an Azure account involves the following steps:
+
+1. **Visit Azure Sign-up Page:** Go to [https://azure.com](https://azure.com) and click "Start free" or "Sign up."
+
+2. **Sign In/Create Microsoft Account:** Sign in with your existing Microsoft account or create a new one.
+
+3. **Fill Personal Info:** Provide your name, country, and birthdate.
+
+4. **Verification:** Verify your identity using a code sent to your email or phone.
+
+5. **Choose Account Type:** Select "Individual" or "Business."
+
+6. **Provide Payment Info:** Add your credit card or bank account info for billing verification.
+
+7. **Verify Identity:** Verify your identity again if prompted.
+
+8. **Agree to Terms:** Read and accept the Azure terms of service.
+
+9. **Set Up Account:** Create a unique Azure account name.
+
+10. **Choose Region:** Select an Azure region for your services.
+
+11. **Customize Experience (Optional):** Tailor your Azure experience.
+
+12. **Review and Confirm:** Double-check your information.
+
+13. **Start Using Azure:** Your account is created, and you can start using Azure services. Be aware of potential usage costs.
+
+---
+# Azure Labs
+
+---
+
 ## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
 
 ### Creating a Virtual Machine in Azure for Linux:
