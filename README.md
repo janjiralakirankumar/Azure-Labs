@@ -1,4 +1,4 @@
-## Walkthrough―create an Azure account.
+# Walkthrough―create an Azure account.
 
 Creating an Azure account involves the following steps:
 
@@ -30,8 +30,6 @@ Creating an Azure account involves the following steps:
 
 ---
 # Azure Labs
-
----
 
 ## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
 
