@@ -65,7 +65,57 @@ To explore the Learn sandbox, follow these steps:
 
 # Walkthrough―explore the Azure global infrastructure.
 
-# AZ-900 Labs
+### What is Azure global infrastructure?
+Azure global infrastructure is made up of two key components—physical infrastructure and connective network components. The physical component is comprised of 200+ physical datacenters, arranged into regions, and linked by one of the largest interconnected networks on the planet.
+
+With the connectivity of the global Azure network, each of the Azure datacenters provides high availability, low latency, scalability, and the latest advancements in cloud infrastructure—all running on the Azure platform.
+
+Together, these components keep data entirely within the trusted Microsoft network and IP traffic never enters the public internet.
+
+### What is an Azure datacenter?
+Azure datacenters are unique physical buildings—located all over the globe—that house a group of networked computer servers.
+
+What is an Azure region?
+An Azure region is a set of datacenters, deployed within a latency-defined perimeter and connected through a dedicated regional low-latency network.
+
+With more global regions than any other cloud provider, Azure gives customers the flexibility to deploy applications where they need. An Azure region has discrete pricing and service availability.
+
+### What is an Azure geography?
+An Azure geography is a discrete market, typically containing at least one or more regions, that preserves data residency and compliance boundaries. Geographies allow customers with specific data-residency and compliance needs to keep their data and applications close. Geographies are fault-tolerant to withstand complete region failure through their connection to the dedicated high-capacity networking infrastructure of Azure.
+
+### What are Azure Availability Zones?
+Azure Availability Zones are unique physical locations within an Azure region and offer high availability to protect your applications and data from datacenter failures. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking.
+
+The physical separation of availability zones within a region protects apps and data from facility-level issues. Zone-redundant services replicate your apps and data across Azure Availability Zones to protect from single points of failure.
+
+### What is the Azure global network?
+The Azure global network refers to all of the components in networking and is comprised of the Microsoft global wide-area network (WAN), points of presence (PoPs), fiber, and others.
+
+### What are Azure Edge Zones?
+Azure Edge Zones are footprint extensions of Azure, placed in densely populated areas. Azure Edge Zones support virtual machines (VMs), containers, and a select set of Azure services that let you run latency-sensitive and throughput-intensive apps close to your end users.
+
+Azure Edge Zones are part of the Microsoft global network and offer secure, reliable, and high-bandwidth connectivity between apps—running at the Azure Edge Zone (close to the user), and the full set of Azure services running across the larger Azure regions.
+
+### What is Azure Space?
+Azure Space is a strategic initiative that extends the utility of Azure capabilities through the power of space infrastructure. It was created to be the platform and ecosystem of choice for the mission needs of the space community. Azure Space makes connectivity and compute increasingly attainable across industries, including agriculture, energy, telecommunications, and government.
+
+### What is Azure Orbital?
+Azure Orbital is part of Azure Space strategic initiative. It provides a fully managed ground station service that enables customers to communicate, downlink, and process data from their satellites or spacecrafts on a pay-as-you-go basis—without needing to build their own satellite ground stations.
+
+What’s the Microsoft global wide-area network (WAN)?
+The Microsoft global wide-area network (WAN) connects hundreds of datacenters in regions around the world and offers high availability and capacity. With the flexibility to immediately respond to unpredictable demand spikes, the global WAN is critical in delivering a great cloud service experience.
+
+### What’s an Azure point of presence?
+An Azure point of presence, often abbreviated as PoP, is an access point or physical location where traffic can enter or exit the Microsoft global network.
+
+### What are Azure regional network gateways?
+Regional network gateways are massively parallel, hyperscale datacenter interconnects between datacenters within a region—without the need to network each individual datacenter to the others in a region.
+
+This ensures that connection issues in one datacenter don’t cause issues for the wider region. This also allows the addition of new datacenters without the need to route direct network connections to each existing datacenter.
+
+---
+
+# Exercise―create an Azure resource
 
 ## Lab-01: Step-by-Step Guide for Creating a Linux Virtual Machine and Deploying Nginx Using Azure:
 
@@ -195,9 +245,29 @@ Before Installing Nginx, Copy the Public IP and paste it into a new tab in your 
 
 You have now successfully installed Nginx on your Linux VM and accessed the default web page. Further configuration can be done to host web content or applications as needed.
 
+**7. Monitor the Resource Group:**
+   - After the VM provisioning is complete, go to the Azure Portal dashboard.
+   - Click on "Resource groups" in the left-hand menu.
+
+**8. Select the Resource Group:**
+   - Choose the resource group where you created your VM.
+
+**9. View Resources:**
+   - In the resource group overview, you will see a list of resources. Your new virtual machine should be listed here.
+
+**10. Azure Monitor for VM Insights:**
+   - To monitor the VM's performance and health, you can click on the VM's name in the resource group. Under "Monitoring," you'll find "Azure Monitor for VM Insights." This provides insights into your VM.
+
+**11. Set Up Alerts:**
+    - In the VM's monitoring section, you can configure alerts based on performance metrics. This way, you'll be notified if something goes wrong with your VM.
+
+By following these steps, you can create a virtual machine and monitor the resource group to ensure the VM is successfully created and is performing as expected. Azure Monitor provides the tools to keep an eye on your VM's health and set up alerts to proactively address any issues that may arise.
+
 ---
 
-## Lab-02: Step-by-Step Guide for Creating a Windows Virtual Machine and Deploying Nginx Using Azure:
+## Lab-02: Exercise―create a virtual machine and Install the web server package.
+
+Create a virtual machine in the Azure portal, connect to the virtual machine, install the web server role and test. 
 
 ### Creating a Virtual Machine in Azure for Windows Server:
 
@@ -216,9 +286,7 @@ You have now successfully installed Nginx on your Linux VM and accessed the defa
      - **Resource Group**: Create a new `resource group` (e.g., `Demo-RSG-YourName`) or use an existing one.
 
 5. **Virtual Machine Name**:
-   - Specify a name for your VM, e.g., `
-
-Demo-WindowsVM-YourName`.
+   - Specify a name for your VM, e.g., `Demo-WindowsVM-YourName`.
 
 6. **Region**:
    - Leave it as the default (e.g., East US) or choose a region near your location for optimal performance.
@@ -302,8 +370,85 @@ To meet your resource requirements and performance:
 
 **Note**: Choose a size that aligns with your specific workload requirements. Additionally, be aware that some VM sizes are only available in certain regions, so ensure the size you want is available in your selected region.
 
+To install a web server package on an already created Windows Virtual Machine (VM), you can use Internet Information Services (IIS), which is a popular web server for Windows. Here are the steps to install IIS on a Windows VM:
+
+8. **Open Server Manager**:
+   - Press the "Windows" key on your keyboard, type "Server Manager," and open the Server Manager application.
+
+9. **Add Roles and Features**:
+   - In the Server Manager window, click on "Manage" in the top-right corner, and then select "Add Roles and Features."
+
+10. **Role-Based or Feature-Based Installation**:
+   - In the "Before you begin" window, click "Next."
+   - Choose "Role-based or feature-based installation" and click "Next."
+
+11. **Select the Server**:
+   - Select "Select a server from the server pool," and make sure your local server (the VM you are on) is selected. Click "Next."
+
+12. **Select Features**:
+   - In the "Select features" window, scroll down and find "Web Server (IIS)." Check the box next to it. You may see additional features that can be installed with IIS; you can leave them as their default selections. Click "Next."
+
+13. **Role Services**:
+   - In the "Select role services" window, the required services for a basic web server are automatically selected. Review them and click "Next."
+
+14. **Confirmation**:
+   - Review your selections, and then click "Install."
+
+15. **Install IIS**:
+    - The installation process will begin, and it may take a few minutes to complete.
+
+16. **Completion**:
+    - Once the installation is finished, you will see a "Results" screen. It should show "Installation succeeded." Click "Close" to exit the wizard.
+
+17. **Verify IIS Installation**:
+    - To verify that IIS is installed and running, open a web browser within the VM and enter "http://localhost" in the address bar. If you see the default IIS start page, IIS is up and running.
+
+IIS is now installed and configured on your Windows VM. You can start deploying your web applications or websites on this server. Make sure to configure any additional settings, such as firewall rules or security, based on your specific requirements and needs.
+
 ---
-## Lab 03: Detailed Steps for Creating an Azure Blob Storage:
+## Lab3:  Walkthrough―configure network access:
+
+It involves creating and configuring a Network Security Group (NSG) to control inbound and outbound traffic to and from resources within a Virtual Network (VNet). In this example, we'll configure HTTP access (port 80) to a virtual machine.
+
+**1. Verify Currently Open Ports:**
+
+Before making changes, you should verify the current network configuration. To check which ports are open on your VM, you can use the following steps:
+
+- Connect to your Azure VM using Remote Desktop (RDP).
+- On the VM, you can use the Command Prompt or PowerShell to run a command like `netstat -an` or `Test-NetConnection -ComputerName localhost -Port 80` to check if port 80 is already open.
+
+**2. Create a Network Security Group:**
+
+In this step, we'll create a Network Security Group and associate it with your virtual machine:
+
+- In the Azure Portal, go to the "Home" or "All services" and search for "Network security groups."
+- Click "Add" to create a new NSG. Provide a name and specify the resource group and region.
+- Click "Review + create" and then "Create" to create the NSG.
+
+**3. Configure HTTP Access (Port 80):**
+
+Now, you'll configure the NSG to allow incoming traffic on port 80 (HTTP):
+
+- Go to the newly created NSG, and in the left-hand menu, click on "Inbound security rules."
+- Click "Add" to create a new rule.
+- Provide a name for the rule, set the "Priority" (lower numbers have higher priority), and specify the "Source" (where the traffic is coming from, e.g., Any or a specific IP range).
+- Set the "Service" to "HTTP (80)," or you can manually specify port 80.
+- Choose "Allow" as the "Action."
+- You can leave "Priority" as the default value or adjust it based on your requirements.
+- Click "Add" to create the rule.
+
+**4. Test the Connection:**
+
+To test if the configuration is working as expected:
+
+- Make sure your VM is running and your web server is set up and listening on port 80.
+- Open a web browser or use a tool like cURL to access your VM's public IP address or DNS name over HTTP (e.g., `http://<your-vm-public-ip>`).
+- You should be able to access your web server over HTTP. If you can, the NSG rule is configured correctly.
+
+Make sure to monitor your NSG for any unexpected changes or access issues and adjust the NSG rules as needed based on your security requirements. Additionally, for production environments, consider using more specific source IPs and HTTPS (port 443) for added security.
+
+---
+## Lab 04: Detailed Steps for Creating an Azure Blob Storage:
 
 **Step 1: Create an Azure Storage Account**
 
@@ -407,5 +552,164 @@ To meet your resource requirements and performance:
 2. Delete the storage account, containers, and blobs you created during the lab. You can do this by going to the respective resource and clicking the "Delete" option.
 
 By following these detailed steps with explanations, beginners can create an Azure Blob Storage lab, learning the fundamentals of Azure Blob Storage and its best practices for security and efficiency.
+
+---
+## LAb 05: Exercise―use the Azure pricing calculator
+
+Using the Azure Pricing Calculator is a great way to estimate the cost of Azure services and resources before you deploy them. Here's a simple exercise to get you started:
+
+**1. Access the Azure Pricing Calculator:**
+
+Visit the [Azure Pricing Calculator](https://azure.com/calculator) using a web browser.
+
+**2. Configure the Pricing Calculator:**
+
+Follow these steps to configure the pricing calculator:
+
+- Click on "Get started" or "Pricing calculator" to begin.
+- In the "Estimate your costs for Azure" section, you will see a set of options:
+  - **Products**: Click on "Add products" to choose the Azure services you want to include in your estimate. You can search for services by name or browse categories.
+  - **Region**: Select the Azure region where you plan to deploy your resources.
+  - **Term**: Choose the term of your estimate, such as Pay-as-you-go or a specific contract.
+  - **Currency**: Select your preferred currency for pricing.
+  - **Additional filters**: Optionally, you can apply filters like "Service Type" or "Resource Tags" to refine your selection.
+- As you make your selections, the pricing calculator will update in real-time to show the estimated cost.
+
+**3. Add Azure Products:**
+
+Let's add an example product for estimation:
+
+- Click "Add products" and search for "Virtual Machines."
+- Select a VM type (e.g., Windows or Linux) and specify the VM configuration (e.g., size, number of instances, and storage type).
+- Click "Add" to add the VM to your estimate.
+
+**4. Review the Pricing Estimate:**
+
+Once you've added the products you want to estimate, the pricing calculator will provide you with a detailed breakdown of the estimated costs. You can review this information, which includes:
+
+- Total monthly cost.
+- Cost breakdown by service, region, and term.
+- Details of the selected Azure services and their configurations.
+
+**5. Save or Export the Estimate:**
+
+You can save or export your estimate for future reference or sharing. Click on the "Save" or "Export" buttons to do this.
+
+**6. Modify the Estimate:**
+
+You can go back and make changes to your estimate at any time by adjusting the products, region, terms, or other settings. The estimate will automatically update.
+
+**7. Share the Estimate:**
+
+If you need to collaborate with others or get approvals, you can share the estimate by using the "Share" feature. This allows you to generate a URL that others can use to view your estimate.
+
+This exercise helps you become familiar with the Azure Pricing Calculator, allowing you to estimate the costs associated with your Azure deployments and make informed decisions about your cloud spending.
+
+---
+## Lab 06: Exercise―use the Azure TCO calculator
+
+The Azure Total Cost of Ownership (TCO) Calculator is a tool that allows you to estimate the costs associated with running your workloads on Azure compared to an on-premises environment. Here's a step-by-step exercise to use the Azure TCO Calculator:
+
+**1. Access the Azure TCO Calculator:**
+
+Go to the [Azure TCO Calculator](https://azure.microsoft.com/en-us/tco/calculator/) using a web browser.
+
+**2. Configure the TCO Calculator:**
+
+Follow these steps to configure the TCO Calculator:
+
+- Click on "Get started" or "TCO calculator" to begin.
+- In the "Estimate your TCO with Azure" section, you'll see various options:
+  - **Name your estimate**: Give your estimate a name for reference.
+  - **Location**: Choose your country or region to account for local costs.
+  - **Organization type**: Specify whether you're an Enterprise or a Managed Service Provider (MSP).
+  - **Use case**: Select the use case that best fits your scenario, such as "Migrate & Modernize" or "New Workload."
+
+**3. Input Assumptions:**
+
+You will be asked to provide detailed information about your current on-premises environment. Here's a simplified example:
+
+- **On-Premises Costs**: Enter information about your current data center costs, including capital expenditure (CapEx) and operational expenditure (OpEx) items.
+- **Server Workloads**: Define the number and types of servers you currently have (e.g., physical, virtual, or containerized).
+- **Storage**: Enter the details of your on-premises storage environment.
+- **Network**: Describe your network infrastructure and bandwidth costs.
+
+**4. Configure Azure Options:**
+
+Next, you'll provide information about the Azure options you want to compare. This includes:
+
+- **Virtual Machines**: Specify the number of VMs you plan to deploy and their configurations.
+- **Storage**: Define the Azure storage solutions you intend to use.
+- **Network**: Provide details on Azure network costs and bandwidth.
+
+**5. Review the Results:**
+
+After inputting all your assumptions, the TCO Calculator will generate a comprehensive report showing a detailed breakdown of costs for your on-premises environment and the equivalent costs in Azure. It will provide insights into your potential cost savings and a comparison of the two scenarios.
+
+**6. Save a Copy:**
+
+To save a copy of your TCO estimate:
+
+- Click on the "Save" button.
+- You will be prompted to sign in with your Microsoft account or create one if you don't have an account.
+- After signing in, you can save your estimate for future reference.
+
+The TCO Calculator allows you to analyze the cost implications of migrating to Azure, making informed decisions about your cloud strategy and cost savings.
+
+---
+## Lab 07: Walkthrough―manage resource locks
+
+Resource locks in Azure are used to prevent accidental deletion or modification of resources. There are two types of resource locks: "ReadOnly" and "Delete." In this walkthrough, we'll add a "ReadOnly" resource lock to a resource, update the lock, remove it, and then delete the resource.
+
+**1. Create a Resource:**
+
+First, you need to create a resource in Azure. For the purpose of this walkthrough, let's create a simple Azure Storage account. You can follow these steps:
+
+- Sign in to the Azure Portal.
+- Click on "+ Create a resource."
+- Search for "Storage account," select it, and fill in the required details to create the storage account. Click "Review + create" and then "Create."
+
+**2. Add a ReadOnly Resource Lock:**
+
+Now, let's add a "ReadOnly" resource lock to the storage account:
+
+- Go to the Azure Portal.
+- Navigate to your newly created storage account.
+- In the left-hand menu, under "Settings," find and select "Locks."
+- Click the "+ Add" button to add a new lock.
+- Provide a name for the lock, such as "ReadOnlyLock."
+- Select "ReadOnly" as the lock type.
+- Optionally, provide a description.
+- Click "OK" to create the lock.
+
+**3. Update the Lock and Retest:**
+
+Now, let's update the existing lock to make a modification and then test it:
+
+- In the "Locks" section of the storage account, find the "ReadOnlyLock" that you just created.
+- Click on the "ReadOnlyLock" to view its details.
+- In the "Lock details" pane, click "Edit" to make changes to the lock. For example, you can update the description.
+- Click "Save" to update the lock.
+
+To test the ReadOnly lock, try to make a change to the storage account. You'll see that Azure prevents any modifications while the lock is in place.
+
+**4. Remove the Resource Lock:**
+
+To remove the "ReadOnly" resource lock:
+
+- In the "Locks" section of the storage account, find the "ReadOnlyLock."
+- Click on the "ReadOnlyLock" to view its details.
+- In the "Lock details" pane, click "Delete."
+- Confirm the removal by clicking "Yes" in the confirmation dialog.
+
+**5. Delete the Resource:**
+
+To delete the resource, in this case, the storage account:
+
+- Go to the storage account's main page.
+- In the left-hand menu, under "Settings," click on "Overview."
+- Click the "Delete" button, and follow the prompts to confirm the deletion. Note that you can't delete a resource if there is a "Delete" resource lock in place.
+
+This walkthrough demonstrates how to create, update, and remove a "ReadOnly" resource lock to prevent modifications to a resource, and how to delete the resource once the lock is removed. Resource locks provide an additional layer of protection for your critical Azure resources.
 
 ---
